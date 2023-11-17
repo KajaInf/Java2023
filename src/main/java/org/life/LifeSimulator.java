@@ -3,19 +3,19 @@ package org.life;
 public class LifeSimulator {
 
   public static void main(String[] args) {
-    Board board = new Board(10, 10);
-    /* TODO:
-     - Add at least 2 classes that implement the Organism interface.
-     - The new classes should possess unique abilities, such as:
-        -- Jumping (moving more than 1 step at a time).
-        -- Sight (detecting other organisms within a certain radius).
-        -- Avoiding illegal moves.
-     - Ensure that an Organism doesn't move if it attempts an illegal move.
-     - Implement a mechanism where an Organism consumes another (taking all its energy) when it occupies the same space.
-     - Run simulation for some time, eg. when there is only one Organism left
-     */
-    Organism organism = new Organism(100);
-    board.addOrganism(organism, 5, 5);
-    organism.move();
+    Board board = new Board(25, 125);
+    Organism organism1 = new Organism(100,board);
+    Jumper organism2 = new Jumper(20, board);
+    board.addOrganism(organism1, 5, 5);
+    board.addOrganism(organism2, 3,4);
+    for (int i = 0; i < 20; i++){
+      organism1.move();
+
+      System.out.println("Org1 : ");
+      organism2.move();
+
+      System.out.println("Org2 : " );
+    }
+
   }
 }

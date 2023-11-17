@@ -6,10 +6,18 @@ public class Organism {
 
   private int energy;
   private Position position;
-  private Random random = new Random();
+  private Random random = new Random(); //generowanie pseudolosowych liczb
+  private Board board;
 
-  public Organism(int energy) {
+  public Organism(int energy,Board board) {
+    this.board = board;
     this.energy = energy;
+  }
+
+
+
+  public void setBoard(Board board){
+    this.board = board;
   }
 
   public void move() {
@@ -26,8 +34,16 @@ public class Organism {
       // Move left or right by 1
       newX += random.nextBoolean() ? 1 : -1;
     }
+    board.moveOrganism(this,newX,newY);
+  }
+  public int getEnergy(){return energy;}
 
-    // TODO: Use the board's moveOrganism method to move the organism
+  public void eatEnergy(int eaten) {
+    this.energy += eaten;
+  }
+
+  public void setEnergy(int energy) {
+    this.energy = energy;
   }
 
   public void setPosition(Position position) {
@@ -38,4 +54,3 @@ public class Organism {
     return position;
   }
 }
-
