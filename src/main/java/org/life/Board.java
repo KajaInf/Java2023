@@ -22,13 +22,29 @@ public class Board {
   }
 
   public void moveOrganism(Organism organism, int newX, int newY) {
-    // TODO implement that one organism eats the other
-    if (newX >= 0 && newX < width && newY >= 0 && newY < height && organisms[newX][newY] == null) {
+    if (newX >= 0 && newX < width && newY >= 0 && newY < height) {
+      if(organisms[newX][newY] == null){
       organisms[organism.getPosition().getX()][organism.getPosition().getY()] = null;
       organisms[newX][newY] = organism;
       organism.setPosition(new Position(newX, newY));
+      }else{
+        int eatenEnergy = organisms[newX][newY].getEnergy();
+        organisms[newX][newY].setEnergy(0);
+        organism.eatEnergy(eatenEnergy);
+
+        organisms[organism.getPosition().getX()][organism.getPosition().getY()] = null;
+        organisms[newX][newY] = organism;
+        organism.setPosition(new Position(newX, newY));
+      }
     } else {
       System.out.println("Invalid move!");
     }
   }
+
+  public boolean isEmpty(int x, int y){
+    return organisms[x][y] == null;
+  }
+
+
+
 }
