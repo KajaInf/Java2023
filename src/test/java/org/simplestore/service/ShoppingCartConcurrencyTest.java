@@ -29,6 +29,7 @@ public class ShoppingCartConcurrencyTest {
             }
         };
 
+
         Thread[] addThreads = new Thread[10]; // 10 threads adding 10 items each = 100 items added
         Thread[] removeThreads = new Thread[10]; // 10 threads removing 5 items each = 50 items removed
 

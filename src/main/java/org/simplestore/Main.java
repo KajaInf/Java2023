@@ -18,6 +18,7 @@ public class Main {
             shoppingCart.addItem(1, 2);
             shoppingCart.addItem(2, 3);
 
+
             double totalPrice = shoppingCart.calculateTotalCost();
             System.out.println("Total price of the cart: " + totalPrice);
 

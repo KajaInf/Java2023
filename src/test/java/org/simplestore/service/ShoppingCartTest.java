@@ -27,6 +27,7 @@ class ShoppingCartTest {
         assertEquals(1, shoppingCart.getItemQuantity(1), "Cart should have 1 item of product ID 1");
     }
 
+
     @Test
     void removeItem_ShouldRemoveProductFromCart() throws ProductNotFoundException {
         shoppingCart.addItem(1, 2);

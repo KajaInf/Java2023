@@ -4,7 +4,6 @@ import org.simplestore.model.Inventory;
 import org.simplestore.model.Product;
 import org.simplestore.model.ProductNotFoundException;
 
-
 import java.util.HashMap;
 import java.util.Map;
 

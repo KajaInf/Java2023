@@ -1,5 +1,6 @@
 package org.simplestore.model;
 
+
 import java.util.*;
 
 public class Inventory {

@@ -27,3 +27,4 @@ class ProductTest {
         assertEquals(expectedString, product.toString(), "The toString method should return a correctly formatted string");
     }
 }
+

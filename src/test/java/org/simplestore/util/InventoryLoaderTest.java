@@ -33,6 +33,7 @@ class InventoryLoaderTest {
         inventory = new Inventory();
     }
 
+
     @AfterEach
     void tearDown() throws IOException {
         // Delete the temporary file
