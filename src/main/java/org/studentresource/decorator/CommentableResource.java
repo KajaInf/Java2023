@@ -2,12 +2,29 @@ package org.studentresource.decorator;
 
 import org.studentresource.StudentResource;
 
-// This class should allow adding comments to the resource
 public class CommentableResource extends ResourceDecorator {
+    private String comment;
 
     public CommentableResource(StudentResource decoratedResource) {
+
         super(decoratedResource);
     }
+    public void addComment(String comment) {
 
-    // Implement commenting features
+        this.comment = comment;
+    }
+
+    public String getComment() {
+
+        return comment;
+    }
+
+    @Override
+    public StudentResource getDecoratedResource() {
+
+        return super.getDecoratedResource();
+    }
+
+
+
 }

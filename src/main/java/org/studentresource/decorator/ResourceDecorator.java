@@ -9,6 +9,18 @@ public abstract class ResourceDecorator implements StudentResource {
         this.decoratedResource = decoratedResource;
     }
 
-    // Implement all necessary methods from StudentResource
-    // Override methods to add additional behaviors
+    public StudentResource getDecoratedResource() {
+        return decoratedResource;
+    }
+
+    @Override
+    public String getId() {
+        return decoratedResource.getId();
+    }
+
+    @Override
+    public String getName() {
+        return decoratedResource.getName();
+    }
+
 }
