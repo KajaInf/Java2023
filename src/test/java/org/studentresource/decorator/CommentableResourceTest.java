@@ -3,7 +3,6 @@ package org.studentresource.decorator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.studentresource.Course;
-import org.studentresource.decorator.CommentableResource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,5 +21,14 @@ class CommentableResourceTest {
         commentableResource.addComment(comment);
 
         assertEquals(comment, commentableResource.getComment(), "The comment should match the added one.");
+    }
+
+    @Test
+    void addEmptyCommentTest() {
+        Course course = new Course("CS102", "Data Structures");
+        CommentableResource commentableResource = new CommentableResource(course);
+        commentableResource.addComment("");
+
+        assertEquals("", commentableResource.getComment(), "Empty comment should be added and retrieved.");
     }
 }
